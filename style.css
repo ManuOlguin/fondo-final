@@ -49,10 +49,10 @@ section video{
     object-fit:fill;
 }
 
-div{
+iframe{
     position: absolute;
-    top: 0;
+    top: -40px;
     right: 0;
     width: 65%;
-    height: 40%;
+    height: 105%;
 }
