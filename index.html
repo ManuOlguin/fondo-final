@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <video autoplay muted> 
+            <source src="cielo.mp4" type="video/mp4">
+          </video>  
+        <img src="manufondo.png" >     
+        <img src="edf1.png" data-speed="-1" class="layer">
+        <img src="edf2.png" data-speed="-2" class="layer arriba">
+        <img src="edf3.png" data-speed="1" class="layer grande">
+        <img src="personas.png" data-speed="2" class="layer">
+        <img src="auto.png" data-speed="-2" class="layer">
+        <img src="man.png" data-speed="2" class="layer">
+        <img src="manu.png" data-speed="5.5" class="layer">
+        <img src="papa.png" data-speed="-5" class="layer">
+        <img src="woman.png" data-speed="3" class="layer">
+
+    </section>
+    <script type="text/javascript">
+        document.querySelector('video').playbackRate = 0.6;
+        document.addEventListener("mousemove", parallax);
+        function parallax(e){
+            this.querySelectorAll('.layer').forEach(layer => {
+                const speed = layer.getAttribute('data-speed')
+                const x = (window.innerWidth - e.pageX*speed)/300
+                const y = (window.innerHeight - e.pageY*speed)/300
+                layer.style.transform =  `translateX(${x}px) translateY(${y}px)`
+            });
+        }
+        
+    </script>
+</body>
+</html>
