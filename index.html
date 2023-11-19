@@ -34,12 +34,17 @@
                 layer.style.transform =  `translateX(${x}px) translateY(${y}px)`
             });
         }
-        var viddio = document.getElementById("viddio");
-        document.addEventListener("visibilitychange", function() {
-        if (document.hidden) {
+        var video = document.getElementById("viddio");
+
+
+        document.addEventListener("mouseout", function(event) {
+        if (event.relatedTarget === null) {
+            console.log("The mouse is not in the page.");
             video.pause();
-        } else {
-            console.log("The page is visible.");
+        }
+        else{
+            console.log("The mo");
+
             video.play();
         }
         });
