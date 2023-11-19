@@ -8,7 +8,7 @@
 </head>
 <body>
     <section>
-        <video autoplay muted> 
+        <video id="viddio" autoplay muted loop> 
             <source src="cielo.mp4" type="video/mp4">
           </video>  
         <img src="manufondo.png" >     
@@ -34,6 +34,16 @@
                 layer.style.transform =  `translateX(${x}px) translateY(${y}px)`
             });
         }
+        var viddio = document.getElementById("viddio");
+        document.addEventListener("visibilitychange", function() {
+        if (document.hidden) {
+            video.pause();
+        } else {
+            console.log("The page is visible.");
+            video.play();
+        }
+        });
+
         
     </script>
 </body>
