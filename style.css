@@ -57,7 +57,7 @@ iframe{
     height: 105%;
 }
 #carga{
-    background-color: #929292;
+    background-color: rgb(44, 33, 19);
     position: absolute;
     top: 0;
     left: 0;
@@ -68,17 +68,22 @@ iframe{
 
 
 .progress{
-    position: relative;
-    height: 10px;
+    top: 1em;
+    left: 1em;
+    position: absolute;
+    height: 17px;
     width: 40%;
-    border: 10px solid #f4a261;
+    background-color: rgba(244, 163, 97, 0.425);
     border-radius: 15px;
+
 }
 .progress .color{
     position: absolute;
-    background-color: #ffffff;
+    background-color: #ffffff7e;
     width: 30px;
-    height: 10px;
+    height: 17px;
     border-radius: 15px;
     transition: 1s  
+    
+
 }

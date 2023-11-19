@@ -39,7 +39,10 @@
             document.getElementById("cargad").style.width = imagesLoaded*100/images.length + "%"
 
             if (imagesLoaded == images.length) {
-                document.getElementById("carga").style.display = "none"
+                //document.getElementById("carga").style.display = "none"
+                document.getElementById("carga").style.opacity = "0"
+                document.getElementById("carga").style.transition = "1s"
+
             }
         });
         }
