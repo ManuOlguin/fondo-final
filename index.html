@@ -21,10 +21,28 @@
         <img src="manu.png" data-speed="5.5" class="layer">
         <img src="papa.png" data-speed="-5" class="layer">
         <img src="woman.png" data-speed="3" class="layer">
-
+        <div id="carga">
+            <div class="progress">
+                <div id="cargad" class="color"></div>
+              </div>
+        </div>
     </section>
     <script type="text/javascript">
-        document.querySelector('video').playbackRate = 0.6;
+
+        var images = document.getElementsByTagName("img");
+        var imagesLoaded = 0;
+
+        for (var i = 0; i < images.length; i++) {
+        images[i].addEventListener("load", function() {
+            imagesLoaded++;
+            console.log(imagesLoaded, imagesLoaded*100/images.length + "%")
+            document.getElementById("cargad").style.width = imagesLoaded*100/images.length + "%"
+
+            if (imagesLoaded == images.length) {
+                document.getElementById("carga").style.display = "none"
+            }
+        });
+        }
         document.addEventListener("mousemove", parallax);
         function parallax(e){
             this.querySelectorAll('.layer').forEach(layer => {
