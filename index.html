@@ -37,8 +37,8 @@
         var video = document.getElementById("viddio");
 
 
-        document.addEventListener("mouseout", function(event) {
-        if (event.relatedTarget === null) {
+        document.addEventListener("visibilitychange", function(event) {
+        if (document.hidden) {
             console.log("The mouse is not in the page.");
             video.pause();
         }
